@@ -4,7 +4,7 @@
 
 # 导入包
 
-from urllib import request
+import urllib
 import random
 import re
 # 爬取的网页地址
@@ -12,7 +12,7 @@ url = "https://www.qiushibaike.com/8hr/page/15/"
 # 了解http请求的过程，http协议（请求协议，响应协议）
 # 模拟http发送请求
 # 创建一个请求对象。使urllib包中的request包
-req = request.Request(url)
+req = urllib.Request(url)
 # 用一个列表保存几个浏览器引擎
 agents = ["Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36","Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko"]
 # 为了反反爬虫，随机取一个浏览器
