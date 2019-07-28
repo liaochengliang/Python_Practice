@@ -4,7 +4,7 @@
 
 # 导入包
 
-import urllib
+import urllib.request
 import random
 import re
 # 爬取的网页地址
@@ -12,16 +12,16 @@ url = "https://www.qiushibaike.com/8hr/page/15/"
 # 了解http请求的过程，http协议（请求协议，响应协议）
 # 模拟http发送请求
 # 创建一个请求对象。使urllib包中的request包
-req = urllib.Request(url)
+#req = urllib.request("https://www.qiushibaike.com/8hr/page/15")
 # 用一个列表保存几个浏览器引擎
 agents = ["Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36","Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko"]
 # 为了反反爬虫，随机取一个浏览器
 userAgent=random.choice(agents)
 # 向请求对象中添加请求头：User-Agent
-req.add_header("User-Agent",userAgent)
+req=("User-Agent",userAgent)
 # 发送请求,并将响应过来的http协议数据包，保存在res变量中
 print("发送请求")
-res=request.urlopen(req)
+res=urllib.request.urlopen(url,req)
 print("请求成功")
 # 获取响应回来的html字符串
 html= res.read().decode("utf-8")
